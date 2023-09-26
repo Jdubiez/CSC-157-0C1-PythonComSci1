@@ -1,7 +1,10 @@
+# Imported Moduals to help
 import math
+import re
 
+
+# Sample Run
 """
-Sample Run:
 Please enter the movie name.
 CSC 155 The Movie!
 Please enter the running time in minutes.
@@ -23,24 +26,59 @@ Average movie critic rating: 87.58
 Overall movie rating: 83
 """
 
-movieTitle = "Title: " + str(input("Please enter the movie name.\n"))
-print(movieTitle)
 
-movieRunTime = int(input("Please enter the running time in minutes.\n"))
+# Getting the title
+title = "Title: " + str(input("Please enter the movie name.\n"))
 
+
+# Getting the runtime and converting it to hours
+runTime = int(input("Please enter the running time in minutes.\n"))
 runTimeHour = (
-    "Running time: "
-    + str(math.floor(movieRunTime / 60))
-    + "h"
-    + str((movieRunTime % 60))
+    "Running time: " + str(math.floor(runTime / 60)) + "h" + str((runTime % 60))
 )
+
+
+# Getting the website ratings and finding the average
+websiteRatings = (
+    float(input("Please enter ratings from the movie review webstite.\n"))
+    + float(input())
+    + float(input())
+)
+websiteRatingsAVG = "Average website rating: " + ("{:.2f}".format(websiteRatings / 3))
+
+
+# Getting and focus group ratings and finding the average
+focusGroupRatings = float(
+    input("Please enter ratings from the focus group.\n")
+) + float(input())
+focusGroupRatingsAVG = "Average focus group rating: " + (
+    "{:.2f}".format(focusGroupRatings / 2)
+)
+
+# Getting the critic average
+criticRatings = float(input("Please enter the average movie critic rating.\n"))
+criticRatingsAVG = "Average movie critic rating: " + str("{:.2f}".format(criticRatings))
+
+
+# priniting out the averages before weighing
+print(title)
 print(runTimeHour)
+print(websiteRatingsAVG)
+print(focusGroupRatingsAVG)
+print(criticRatingsAVG)
 
 
-movieReviewRatings = (
-    float(input("Please enter ratings from the movie review webstite\n"))
-    + float(input())
-    + float(input())
-)
+# Getting the numbers from the averages
+criticRatingsAVG = re.findall("\d+\.?\d+", criticRatingsAVG)
+websiteRatingsAVG = re.findall("\d+\.?\d+", websiteRatingsAVG)
+focusGroupRatingsAVG = re.findall("\d+\.?\d+", focusGroupRatingsAVG)
 
-movieReviewRatingsAVG = print("{:.1f}".format(movieReviewRatings / 3))
+
+# Weighing the averages
+criticRatingsAVG = sum([float(i) for i in criticRatingsAVG]) * 0.50
+websiteRatingsAVG = sum([float(i) for i in websiteRatingsAVG]) * 0.20
+focusGroupRatingsAVG = sum([float(i) for i in focusGroupRatingsAVG]) * 0.30
+
+# Finding and printing the rounded overall rating
+overallRating = round(websiteRatingsAVG + focusGroupRatingsAVG + criticRatingsAVG)
+print('Overall movie rating:', overallRating)
