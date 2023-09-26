@@ -37,3 +37,5 @@ movieReviewRatings =float(input
 
 movieReviewRatingsAVG = print("{:.1f}".format(movieReviewRatings/3))
 
+
+
