@@ -21,7 +21,6 @@
 # *************************************************************************
 
 from airplane import *
-
 ap = Airplane
 
 # create default airplane
