@@ -13,11 +13,14 @@ sentence = input('Enter a sentence: ')
 
 display_vowel_info(sentence)
 
+print()
+
+
 # prompt for input
 base = int(input('Enter a positive integer for the base of the rectangle: ')) 
 height = int(input('Enter a positive integer for the height of the rectangle: '))
 character = (input('Enter a character used to print the rectangle: '))
-print()
+print(end='')
 
 # print the rectangle by calling the printRectangle function
 print_rectangle(base, height, character)
@@ -39,5 +42,3 @@ for items in negatives(list):
     
 print('\n')
 
-
- 
