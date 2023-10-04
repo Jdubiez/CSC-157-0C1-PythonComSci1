@@ -1,6 +1,6 @@
 #**************************************************************************
-# * Name: Your name                                                 CSC 157
-# * Date: Today's date                                              LAB 4   
+# * Name: Jahson Westby                                             CSC 157
+# * Date: 9/29/2023                                                   LAB 4   
 # *************************************************************************
 # * Problem Statement and Specifications: 
 # * complete the functions
