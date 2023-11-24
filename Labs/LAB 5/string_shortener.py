@@ -31,6 +31,21 @@
 
 
 string = (input(f"Type the message to be shortened\n"))
+senList = list(string)
 
-print(string)
+
+'''
+def algorithm1(string):
+    for i in list(string)
+        if string[i].lower in ['a','e','i','o','u'] and string[i-1] == ' ':
+            i+=1
+        if string[i].lower in ['a','e','i','o','u']:
+            string.pop(i)
+
+    return string
+'''
+
+#print(senList[1])
+
+
 
