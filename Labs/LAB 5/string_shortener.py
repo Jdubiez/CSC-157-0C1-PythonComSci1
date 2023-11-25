@@ -32,18 +32,33 @@
 
 string = (input(f"Type the message to be shortened\n"))
 
-def algorithm1(string):
-    string = list(string)
-    newSen=[]
-    i=0
-    for i in len(string):
-        if string[i].lower in ['a','e','i','o','u'] and string[i-1] == ' ':
-            newSen.append(string[i])
-            i+=1
+def algorithm1(sen):
+
+    sen = list(sen)
+    newSen= ''
+    vowels= ['a','e','i','o','u','A','E','I','O','U']
+    i=1
+    vowAddedCount = 0
+    
+    newSen= newSen+sen[0]
+    if sen[0] in vowels:
+        vowAddedCount+=1
+    for i in range(1,len(sen)):
+        if sen[i-1] == ' ' and sen[i] in vowels:
+            newSen= newSen+sen[i]
+            vowAddedCount += 1
+        if sen[i] != sen[i-1] and sen[i] not in vowels:
+            newSen= newSen+sen[i]
             
-        if string[i].lower in ['a','e','i','o','u']:
-            i+=1
-    return newSen   
+    dif=len(string) - len(newSen)
+
+    totalVowels = 0
+    for i in range(len(string)):
+        if string[i] in vowels:
+            totalVowels+=1
+    
+    repCount = len(sen)- len(newSen) - (totalVowels-vowAddedCount)
+    return f'\nAlgorithm 1\nVowels Removed: {totalVowels-vowAddedCount}\nRepeats Removed: {repCount}\nAlgorithm 1 message: {newSen.lower()}\nAlgorithm 1 characters saved: {dif}\n'
 
 print(algorithm1(string))
 
