@@ -32,7 +32,7 @@ class RegPolygon:
 		self.sideLength = 0
 		self.apothem = 0
 		self.radius = 0
-		self.halfIntAngle = math.pi(self.numSides -2)/(2 * self.numSides)
+		self.halfIntAngle = math.pi*(self.numSides -2)/(2 * self.numSides)
 	
 	# object string representation 		
 	def __str__(self):
@@ -88,16 +88,14 @@ class RegPolygon:
 	
 	# Postcondition: returns the area	
 	def area(self):
-		
-		
-		
-		
+		area = ((1/2)* self.apothem )* self.perimeter()
+		return area
 	
 	############ EXTRA CREDIT ONLY ###############
 	# using the python turtle package, draws the regular polygon and also 
 	# displays all relevant info
 	def draw(self):
-		
+		pass
 		
 		
 		
