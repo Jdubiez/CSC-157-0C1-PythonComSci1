@@ -3,13 +3,13 @@
 # * Date: 11/29/23                                                   LAB 7   
 # *************************************************************************
 # * Problem Statement and Specifications: 
-# * 
+# * read given file and output the items, price, total cost, and total items
 # * 
 # * Input:  
-# *
+# * given files
 # *
 # * Output: 
-# *
+# * items, price, total cost, total items
 # *
 # *************************************************************************
 
