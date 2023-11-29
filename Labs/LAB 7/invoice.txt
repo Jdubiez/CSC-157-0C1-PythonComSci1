@@ -1,0 +1,3 @@
+hammer#9.95
+saw#20.15
+shovel#35.40
