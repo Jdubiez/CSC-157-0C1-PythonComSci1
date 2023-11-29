@@ -1,15 +1,15 @@
 #**************************************************************************
-# * Name: Your name                                                 CSC 157
-# * Date: Today's date                                              LAB 6   
+# * Name: Jahson Westby                                           CSC 157
+# * Date: 11/20/23vvvvv                                             LAB 6   
 # *************************************************************************
 # * Class Statement and Specifications: 
-# * 
+# * Complete all the methods
 # * 
 # * Input:  
-# *
+# * None
 # *
 # * Output: 
-# *
+# *	The number of sides, the side length, the apothem, radius, perimerter, and area
 # *
 # *************************************************************************
 
@@ -74,18 +74,17 @@ class RegPolygon:
 	#				 the parameter radius
 	def setRadius(self, radius):
 		self.radius = radius
+		self.apothem = self.radius * math.sin(self.halfIntAngle)
+		self.sideLength = 2*self.radius*math.cos(self.halfIntAngle)
 		
 
-		
-		
 		
 	
 	# Postcondition: returns the perimeter 	
 	def perimeter(self):
+		perim = self.sideLength * self.numSides
+		return perim
 		
-		
-		
-			
 	
 	# Postcondition: returns the area	
 	def area(self):
