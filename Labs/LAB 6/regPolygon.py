@@ -32,6 +32,7 @@ class RegPolygon:
 		self.sideLength = 0
 		self.apothem = 0
 		self.radius = 0
+		self.halfIntAngle = math.pi(self.numSides -2)/(2 * self.numSides)
 	
 	# object string representation 		
 	def __str__(self):
@@ -49,8 +50,9 @@ class RegPolygon:
 	# Postcondition: sets sideLength, apothem and radius to the correct values based on 
 	#				 the parameter sideLength
 	def setSide(self,sideLength):
-		
-		
+		self.sideLength =  sideLength
+		self.apothem = (self.sideLength * math.tan(self.halfIntAngle))/ 2
+		self.radius = (self.sideLength)/(2* math.cos(self.halfIntAngle))		
 		
 		
 	
@@ -59,7 +61,9 @@ class RegPolygon:
 	# Postcondition: sets apothem, sideLength and radius to the correct values based on 
 	#				 the parameter apothem
 	def setApothem(self,apothem):
-		
+		self.apothem = apothem
+		self.sideLength = (2 * self.apothem)/(math.tan(self.halfIntAngle))
+		self.radius = (self.apothem)/ (math.sin(self.halfIntAngle))
 		
 		
 		
@@ -69,7 +73,9 @@ class RegPolygon:
 	# Postcondition: sets radius, apothem, and sideLength to the correct values based on 
 	#				 the parameter radius
 	def setRadius(self, radius):
+		self.radius = radius
 		
+
 		
 		
 		
